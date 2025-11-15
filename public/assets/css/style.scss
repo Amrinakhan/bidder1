@@ -24632,3 +24632,42 @@ footer{
 .slider-btn{
 cursor: pointer;
 }
+/* Custom Homepage Styles */
+.custom-heading {
+  font-size: 32px;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.custom-heading .bold {
+  font-weight: 600;
+  color: #000;
+}
+
+.custom-heading .light {
+  font-weight: 400;
+  font-family: revert;
+  color: #6a6c6c;
+}
+
+.homepage-features__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+  margin-bottom: 0;
+  transition: all 0.3s ease;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding-left: 30px;
+}
+
+.homepage-features__item:first-child {
+  border-left: none;
+  padding-left: 0;
+}

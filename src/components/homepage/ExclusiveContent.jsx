@@ -357,7 +357,6 @@ const ExclusiveContent = () => {
           width: 100%;
           height: 249.84px;
           border-radius: 15px;
-          overflow: hidden;
         }
 
         .card-image {

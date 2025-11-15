@@ -204,3 +204,26 @@ a {
     padding-left: 0;
   }
 }
+
+
+.custom-heading {
+  font-size: 32px;          /* adjust as needed */
+  font-family: 'Inter', sans-serif; /* or any site font */
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.custom-heading .bold {
+  font-weight: 600;
+  color: #000;
+}
+
+.custom-heading .light {
+  font-weight: 400;
+  font-family: revert;
+  color: #6a6c6c;
+}
+
+

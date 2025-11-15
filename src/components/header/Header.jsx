@@ -138,46 +138,10 @@ const Header = () => {
               </div>
             </div>
             <ul className="menu-list">
-              <li
-                className={`menu-item-has-children ${state.activeMenu === "home" ? "" : ""
-                  }`}
-              >
+              <li className={pathName==="/"?"active":""}>
                 <Link href="/" className="drop-down">
                   Home
                 </Link>
-                <i
-                  className={`dropdown-icon ${state.activeMenu === "home" ? "bi bi-dash" : "bi bi-plus"
-                    }`}
-                  onClick={() => collapseMenu("home")}
-                />
-                <ul
-                  className={`sub-menu ${state.activeMenu === "home" ? "d-block" : ""
-                    }`}
-                >
-                  <li className="active">
-                    <Link href="/">Multipurpose 01</Link>
-                  </li>
-                  <li>
-                    <Link href="/car-auction">Car Auction</Link>
-                  </li>
-                  <li>
-                    <Link href="/antiques-auction">Antiques Auction</Link>
-                  </li>
-                  <li>
-                    <Link href="/art-auction">Art Auction</Link>
-                  </li>
-                  <li>
-                    <Link href="/gadget-and-technology">
-                      Gadget &amp; Technology
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/book-and-comic">Book &amp; Comic</Link>
-                  </li>
-                  <li>
-                    <Link href="/multipurpose2">Multipurpose 02</Link>
-                  </li>
-                </ul>
               </li>
               <li className="menu-item-has-children">
                 <a href="#" className="drop-down">

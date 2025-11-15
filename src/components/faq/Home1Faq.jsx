@@ -8,8 +8,26 @@ const Home1Faq = () => {
         <div className="row mb-60 wow animate fadeInDown" data-wow-delay="200ms" data-wow-duration="1500ms">
           <div className="col-lg-12">
             <div className="section-title text-center">
-            <button className="homepage-featuress__list-btn">
-              <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <button className="homepage-featuress__list-btn" style={{
+              alignItems: 'center',
+              gap: '8px',
+              background: '#E6EEEC',
+              border: '1px solid rgb(218, 225, 223)',
+              color: '#0B0C0C',
+              padding: '10px 20px',
+              borderRadius: '25px',
+              fontSize: '12px',
+              fontWeight: '600',
+              letterSpacing: '1px',
+              cursor: 'pointer',
+              margin: '0 auto 30px',
+              display: 'flex',
+              justifyContent: 'center',
+              width: 'fit-content',
+              visibility: 'visible',
+              opacity: '1'
+            }}>
+              <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg" style={{width: '16px', height: '12px'}}>
                 <path d="M15.5303 6.53033C15.8232 6.23744 15.8232 5.76256 15.5303 5.46967L10.7574 0.696699C10.4645 0.403806 9.98959 0.403806 9.6967 0.696699C9.40381 0.989593 9.40381 1.46447 9.6967 1.75736L13.9393 6L9.6967 10.2426C9.40381 10.5355 9.40381 11.0104 9.6967 11.3033C9.98959 11.5962 10.4645 11.5962 10.7574 11.3033L15.5303 6.53033ZM0 6.75H15V5.25H0V6.75Z" fill="currentColor"/>
               </svg>
               QUESTION NOW
