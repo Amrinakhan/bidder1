@@ -1,9 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import linkedIcon from "@/../images/icons/Icon.svg";
-import availableIcon from "@/../images/icons/Icon (1).svg";
 
 const AddPropertyContent = () => {
   const [showModal, setShowModal] = useState(true);
@@ -101,7 +98,7 @@ const AddPropertyContent = () => {
         </div>
 
         {/* Main Content */}
-        <div className="dashboard-content">
+        <div className="dashboard-content" style={{ background: '#FFFFFF' }}>
           <div className="container">
             {/* Search and Add Property Button */}
             <div className="property-header">
@@ -311,7 +308,11 @@ const AddPropertyContent = () => {
                           <p>{bidder.email}</p>
                         </div>
                         <button className="link-btn linked">
-                          <Image src={linkedIcon} alt="Unlink" width={20} height={20} />
+                          <svg width="20" height="20" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M23.6993 18.2121L25.1327 16.7871H25.116C25.8832 15.9921 26.3036 14.9252 26.2848 13.8206C26.2661 12.7159 25.8097 11.6639 25.016 10.8954C24.2385 10.1456 23.2004 9.72656 22.1202 9.72656C21.04 9.72656 20.0019 10.1456 19.2243 10.8954L17.791 12.3204" stroke="#FB2C36" strokeWidth="1.66667"/>
+                            <path d="M12.3093 17.7891L10.8843 19.2141C10.1171 20.009 9.6967 21.076 9.71545 22.1806C9.73419 23.2852 10.1905 24.3373 10.9843 25.1057C11.7618 25.8556 12.7999 26.2746 13.8801 26.2746C14.9603 26.2746 15.9984 25.8556 16.7759 25.1057L18.2009 23.6807" stroke="#FB2C36" strokeWidth="1.66667"/>
+                            <path d="M14.666 21.3307L21.3327 14.6641" stroke="#FB2C36" strokeWidth="1.66667"/>
+                          </svg>
                         </button>
                       </div>
                     ))}
@@ -340,7 +341,11 @@ const AddPropertyContent = () => {
                           <p>{bidder.email}</p>
                         </div>
                         <button className="link-btn available">
-                          <Image src={availableIcon} alt="Link" width={20} height={20} />
+                          <svg width="20" height="20" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M23.6993 18.2121L25.1327 16.7871H25.116C25.8832 15.9921 26.3036 14.9252 26.2848 13.8206C26.2661 12.7159 25.8097 11.6639 25.016 10.8954C24.2385 10.1456 23.2004 9.72656 22.1202 9.72656C21.04 9.72656 20.0019 10.1456 19.2243 10.8954L17.791 12.3204" stroke="#6EA500" strokeWidth="1.66667"/>
+                            <path d="M12.3093 17.7891L10.8843 19.2141C10.1171 20.009 9.6967 21.076 9.71545 22.1806C9.73419 23.2852 10.1905 24.3373 10.9843 25.1057C11.7618 25.8556 12.7999 26.2746 13.8801 26.2746C14.9603 26.2746 15.9984 25.8556 16.7759 25.1057L18.2009 23.6807" stroke="#6EA500" strokeWidth="1.66667"/>
+                            <path d="M14.666 21.3307L21.3327 14.6641" stroke="#6EA500" strokeWidth="1.66667"/>
+                          </svg>
                         </button>
                       </div>
                     ))}
