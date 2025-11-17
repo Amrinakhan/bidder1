@@ -12,6 +12,9 @@ import "../../public/assets/css/bootstrap.min.css";
 import "../../public/assets/css/style.css";
 import "../../public/assets/css/property-dashboard.css";
 import "../../public/assets/css/bidder-profile-page.css";
+import "../../public/assets/css/bid-management.css";
+import "../../public/assets/css/visibility-control.css";
+import "../../public/assets/css/notifications.css";
 
 import ScrollTopBtn from "../components/common/ScrollTopBtn.jsx";
 import useWow from "@/customHooks/useWow";

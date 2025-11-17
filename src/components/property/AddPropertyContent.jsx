@@ -84,7 +84,7 @@ const AddPropertyContent = () => {
                 <i className="bi bi-building"></i>
                 <span>Properties</span>
               </Link>
-              <Link href="#" className="nav-item">
+              <Link href="/bid-management" className="nav-item">
                 <i className="bi bi-clipboard-data"></i>
                 <span>Bid Management</span>
               </Link>
@@ -92,11 +92,11 @@ const AddPropertyContent = () => {
                 <i className="bi bi-people"></i>
                 <span>Bidders</span>
               </Link>
-              <Link href="#" className="nav-item">
+              <Link href="/visibility-control" className="nav-item">
                 <i className="bi bi-eye"></i>
                 <span>Visibility Control</span>
               </Link>
-              <Link href="#" className="nav-item">
+              <Link href="/notifications" className="nav-item">
                 <i className="bi bi-bell"></i>
                 <span>Notifications</span>
               </Link>

@@ -91,7 +91,7 @@ const DashbaordPage = ({ searchParams }) => {
               <i className="bi bi-building"></i>
               <span>Properties</span>
             </Link>
-            <Link className="nav-item" href="#">
+            <Link className="nav-item" href="/bid-management">
               <i className="bi bi-clipboard-data"></i>
               <span>Bid Management</span>
             </Link>
@@ -102,11 +102,11 @@ const DashbaordPage = ({ searchParams }) => {
               <i className="bi bi-people"></i>
               <span>Bidders</span>
             </Link>
-            <Link className="nav-item" href="#">
+            <Link className="nav-item" href="/visibility-control">
               <i className="bi bi-eye"></i>
               <span>Visibility Control</span>
             </Link>
-            <Link className="nav-item" href="#">
+            <Link className="nav-item" href="/notifications">
               <i className="bi bi-bell"></i>
               <span>Notifications</span>
             </Link>
