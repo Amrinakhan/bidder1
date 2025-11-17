@@ -2,10 +2,12 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import linkedIcon from "@/../images/icons/Icon.svg";
 import availableIcon from "@/../images/icons/Icon (1).svg";
 
 const AddPropertyContent = () => {
+  const router = useRouter();
   const [showModal, setShowModal] = useState(true);
   const [visibilitySettings, setVisibilitySettings] = useState({
     minBid: true,
@@ -59,6 +61,12 @@ const AddPropertyContent = () => {
       ...prev,
       [setting]: !prev[setting],
     }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Redirect to property-details page
+    router.push("/property-details");
   };
 
   return (
@@ -131,7 +139,7 @@ const AddPropertyContent = () => {
                       </button>
                     </div>
                     <div className="modal-body">
-                      <form>
+                      <form onSubmit={handleSubmit}>
                         <div className="form-row">
                           <div className="form-group">
                             <label>Parcel ID</label>

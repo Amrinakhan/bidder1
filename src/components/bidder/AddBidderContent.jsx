@@ -2,8 +2,10 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const AddBidderContent = () => {
+  const router = useRouter();
   const [linkedProperties, setLinkedProperties] = useState([]);
 
   const availableProperties = [
@@ -48,6 +50,12 @@ const AddBidderContent = () => {
 
   const handleUnlinkProperty = (parcelId) => {
     setLinkedProperties(linkedProperties.filter((p) => p.parcelId !== parcelId));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Redirect to bidder-profile page
+    router.push("/bidder-profile");
   };
 
   return (
@@ -119,7 +127,7 @@ const AddBidderContent = () => {
                     </Link>
                   </div>
                   <div className="modal-body">
-                    <form>
+                    <form onSubmit={handleSubmit}>
                       <div className="form-row">
                         <div className="form-group">
                           <label>First Name</label>

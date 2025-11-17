@@ -40,6 +40,72 @@ const BidderProfile = () => {
         time: "5 days ago",
       },
     ],
+    properties: [
+      {
+        id: "PO01",
+        address: "123 Main Street",
+        addressDetail: "123-456-789",
+        currentBid: "$245,000",
+        myBid: "$245,000",
+        status: "Winning",
+        bidDate: "Oct 10, 2024",
+        auctionEnds: "Oct 20, 2024",
+      },
+      {
+        id: "PO02",
+        address: "456 Oak Avenue",
+        addressDetail: "234-567-890",
+        currentBid: "$180,000",
+        myBid: "$175,000",
+        status: "Outbid",
+        bidDate: "Oct 8, 2024",
+        auctionEnds: "Oct 18, 2024",
+      },
+      {
+        id: "PO03",
+        address: "789 Pine Road",
+        addressDetail: "345-678-901",
+        currentBid: "$320,000",
+        myBid: "$320,000",
+        status: "Winning",
+        bidDate: "Oct 12, 2024",
+        auctionEnds: "Oct 22, 2024",
+      },
+    ],
+    communications: [
+      {
+        type: "email",
+        title: "Payment Reminder",
+        description: "Reminder: Payment due for property 123 Main St",
+        date: "Oct 14, 2024 10:30 AM",
+        sentBy: "County Admin",
+        status: "Read",
+      },
+      {
+        type: "question",
+        title: "Question about property",
+        description: "Bidder asked about property details for 456 Oak Ave",
+        date: "Oct 12, 2024 2:15 PM",
+        sentBy: "John Smith",
+        status: "Replied",
+      },
+      {
+        type: "notification",
+        title: "Bid Confirmation",
+        description: "Your bid of $245,000 has been placed successfully",
+        date: "Oct 10, 2024 9:45 AM",
+        sentBy: "System",
+        status: "Read",
+      },
+      {
+        type: "email",
+        title: "Auction Closing Soon",
+        description: "Auction for 789 Pine Road closes in 24 hours",
+        date: "Oct 9, 2024 8:00 AM",
+        sentBy: "County Admin",
+        status: "Read",
+      },
+    ],
   };
 
   return (
@@ -330,6 +396,96 @@ const BidderProfile = () => {
                         <p>{activity.description}</p>
                         <span className="bp-activity-time">{activity.time}</span>
                       </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Properties & Bids Tab */}
+          {activeTab === "properties" && (
+            <div>
+              <h3 style={{ fontSize: '18px', fontWeight: '700', color: '#1A1A1A', marginBottom: '20px' }}>
+                Associated Properties & Bids
+              </h3>
+              <div className="bp-properties-table-wrapper">
+                <table className="bp-properties-table">
+                  <thead>
+                    <tr>
+                      <th>Property ID</th>
+                      <th>Address</th>
+                      <th>Current Bid</th>
+                      <th>My Bid</th>
+                      <th>Status</th>
+                      <th>Bid Date</th>
+                      <th>Auction Ends</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {bidderData.properties.map((property, index) => (
+                      <tr key={index}>
+                        <td>{property.id}</td>
+                        <td>
+                          <div className="bp-address-cell">
+                            <div className="bp-address-main">{property.address}</div>
+                            <div className="bp-address-detail">{property.addressDetail}</div>
+                          </div>
+                        </td>
+                        <td>{property.currentBid}</td>
+                        <td className="bp-my-bid">{property.myBid}</td>
+                        <td>
+                          <span className={`bp-status-tag ${property.status.toLowerCase()}`}>
+                            {property.status}
+                          </span>
+                        </td>
+                        <td>{property.bidDate}</td>
+                        <td>{property.auctionEnds}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+
+          {/* Communication Log Tab */}
+          {activeTab === "communication" && (
+            <div className="bp-communication-container">
+              <div className="bp-communication-wrapper">
+                <div className="bp-communication-header">
+                  <div>
+                    <h3 className="bp-communication-title">Communication Log</h3>
+                    <p className="bp-communication-subtitle">All communications with this bidder</p>
+                  </div>
+                  <button className="bp-new-message-btn">
+                    <i className="bi bi-send"></i>
+                    New Message
+                  </button>
+                </div>
+
+                <div className="bp-communication-list">
+                  {bidderData.communications.map((comm, index) => (
+                    <div className="bp-communication-item" key={index}>
+                      <div className={`bp-comm-icon ${comm.type}`}>
+                        {comm.type === "email" && <i className="bi bi-envelope"></i>}
+                        {comm.type === "question" && <i className="bi bi-chat-left-text"></i>}
+                        {comm.type === "notification" && <i className="bi bi-bell"></i>}
+                      </div>
+                      <div className="bp-comm-content">
+                        <h4 className="bp-comm-title">{comm.title}</h4>
+                        <p className="bp-comm-description">{comm.description}</p>
+                        <div className="bp-comm-meta">
+                          <span className="bp-comm-date">
+                            <i className="bi bi-clock"></i>
+                            {comm.date}
+                          </span>
+                          <span className="bp-comm-sender">• Sent by: {comm.sentBy}</span>
+                        </div>
+                      </div>
+                      <span className={`bp-comm-status ${comm.status.toLowerCase()}`}>
+                        {comm.status}
+                      </span>
                     </div>
                   ))}
                 </div>
