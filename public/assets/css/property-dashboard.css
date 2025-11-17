@@ -1009,9 +1009,11 @@ input:checked + .slider:before {
 }
 
 .properties-table-section h3 {
-  font-size: 20px;
+  margin-top: 16px;
+  font-size: 17px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  padding-left: 16px;
 }
 
 .table-responsive {
@@ -4581,17 +4583,21 @@ button.xs {
   background-color: #fff;
   border: 1px solid #e5e5e5;
   border-radius: 14px;
-  padding: 20px;
+  padding: 0;
   margin-bottom: 30px;
+  margin-top: 20px;
+  width: 100%;
   overflow: hidden;
 }
 
 /* Heading */
 .properties-table-section h3 {
-  font-size: 15px;
+  margin-top: 16px;
+  font-size: 17px;
   font-weight: 600;
   color: #333;
-  margin-bottom: 12px;
+  margin-bottom: 18px;
+  padding-left: 16px;
 }
 
 /* Make table fill full width */
@@ -4648,10 +4654,12 @@ button.xs {
 }
 
 .properties-table-section h3 {
+  margin-top: 16px;
   font-size: 17px;
   font-weight: 600;
   color: #333;
-  margin-bottom: 12px;
+  margin-bottom: 18px;
+  padding-left: 16px;
 }
 
 /* Linked Properties Styling */
@@ -4738,21 +4746,21 @@ button.xs {
 }
 
 .link-btn.available {
-  background-color: #6EA500;
+  background-color: transparent;
   color: #fff;
 }
 
 .link-btn.available:hover {
-  background-color: #5a8700;
+  background-color: #f5f5f5;
 }
 
 .link-btn.linked {
-  background-color: #ef4444;
+  background-color: transparent;
   color: #fff;
 }
 
 .link-btn.linked:hover {
-  background-color: #dc2626;
+  background-color: rgba(251, 44, 54, 0.1);
 }
 
 .link-btn:disabled {
