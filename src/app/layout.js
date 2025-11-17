@@ -11,6 +11,7 @@ import "../../public/assets/css/slick.css";
 import "../../public/assets/css/bootstrap.min.css";
 import "../../public/assets/css/style.css";
 import "../../public/assets/css/property-dashboard.css";
+import "../../public/assets/css/bidder-profile-page.css";
 
 import ScrollTopBtn from "../components/common/ScrollTopBtn.jsx";
 import useWow from "@/customHooks/useWow";

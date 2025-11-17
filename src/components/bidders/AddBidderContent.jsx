@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const availableProperties = [
   { id: "PR001", name: "123 Main Street", parcelId: "123-456-789" },
@@ -39,6 +40,14 @@ const bidderTableData = [
 
 const AddBidderContent = () => {
   const [linkedProps] = useState([]);
+  const router = useRouter();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // In a real app, you would save the bidder data here
+    // For now, we'll just redirect to the first bidder's profile
+    router.push("/bidder/BD001");
+  };
 
   return (
     <div className="dashboard-wrapper">
@@ -104,7 +113,7 @@ const AddBidderContent = () => {
                 </button>
               </div>
 
-              <form className="bidder-form">
+              <form className="bidder-form" onSubmit={handleSubmit}>
                 <div className="form-row">
                   <div className="form-group">
                     <label>First Name</label>
@@ -238,7 +247,11 @@ const AddBidderContent = () => {
                   {bidderTableData.map((bidder) => (
                     <tr key={bidder.bidderId}>
                       <td data-label="Bidder ID">{bidder.bidderId}</td>
-                      <td data-label="Name">{bidder.name}</td>
+                      <td data-label="Name">
+                        <Link href={`/bidder/${bidder.bidderId}`} style={{ color: '#3B82F6', textDecoration: 'none', fontWeight: 500, cursor: 'pointer' }}>
+                          {bidder.name}
+                        </Link>
+                      </td>
                       <td data-label="Email">{bidder.email}</td>
                       <td data-label="Phone">{bidder.phone}</td>
                       <td data-label="Linked Properties" className="linked-properties">
