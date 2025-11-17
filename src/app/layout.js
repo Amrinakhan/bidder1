@@ -15,6 +15,7 @@ import "../../public/assets/css/bidder-profile-page.css";
 import "../../public/assets/css/bid-management.css";
 import "../../public/assets/css/visibility-control.css";
 import "../../public/assets/css/notifications.css";
+import "../../public/assets/css/messaging.css";
 
 import ScrollTopBtn from "../components/common/ScrollTopBtn.jsx";
 import useWow from "@/customHooks/useWow";

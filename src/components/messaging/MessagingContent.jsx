@@ -1,34 +1,117 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
-const BidManagementContent = () => {
-  const bidsData = [
+const MessagingContent = () => {
+  const [selectedConversation, setSelectedConversation] = useState(0);
+  const [messageInput, setMessageInput] = useState("");
+
+  const conversations = [
     {
-      bidId: "B001",
-      property: "123 Main Street",
-      bidder: "John Smith",
-      amount: "$52,000",
-      status: "Pending",
-      date: "2024-01-15",
+      id: 1,
+      name: "Mike Davis",
+      avatar: "/images/Image (John Doe).png",
+      preview: "I need help with the bidding...",
+      time: "2h ago",
+      unread: 2,
+      isOnline: true,
     },
     {
-      bidId: "B002",
-      property: "456 Oak Avenue",
-      bidder: "Jane Doe",
-      amount: "$78,000",
-      status: "Won",
-      date: "2024-01-14",
+      id: 2,
+      name: "Sarah Johnson",
+      avatar: "/images/Image (John Doe).png",
+      preview: "When is the next auction scheduled?",
+      time: "1h ago",
+      unread: 0,
+      isOnline: true,
     },
     {
-      bidId: "B003",
-      property: "789 Pine Road",
-      bidder: "Bob Johnson",
-      amount: "$125,000",
-      status: "Redeemed",
-      date: "2024-01-13",
+      id: 3,
+      name: "Mike Davis",
+      avatar: "/images/Image (John Doe).png",
+      preview: "I need help with the bidding...",
+      time: "3h ago",
+      unread: 1,
+      isOnline: true,
+    },
+    {
+      id: 4,
+      name: "Emily Brown",
+      avatar: "/images/Image (John Doe).png",
+      preview: "Payment has been completed",
+      time: "1d ago",
+      unread: 0,
+      isOnline: true,
+    },
+    {
+      id: 5,
+      name: "Emily Brown",
+      avatar: "/images/Image (John Doe).png",
+      preview: "Payment has been completed",
+      time: "1d ago",
+      unread: 0,
+      isOnline: true,
+    },
+    {
+      id: 6,
+      name: "Emily Brown",
+      avatar: "/images/Image (John Doe).png",
+      preview: "Payment has been completed",
+      time: "1d ago",
+      unread: 0,
+      isOnline: true,
+    },
+    {
+      id: 7,
+      name: "Emily Brown",
+      avatar: "/images/Image (John Doe).png",
+      preview: "Payment has been completed",
+      time: "1d ago",
+      unread: 0,
+      isOnline: true,
     },
   ];
+
+  const messages = [
+    {
+      id: 1,
+      sender: "user",
+      text: "Hello, I have a question about the property at 123 Main St",
+      time: "10:30 AM",
+    },
+    {
+      id: 2,
+      sender: "admin",
+      text: "Hello John! I'd be happy to help. What would you like to know?",
+      time: "10:32 AM",
+    },
+    {
+      id: 3,
+      sender: "user",
+      text: "What is the minimum bid amount and when does the auction close?",
+      time: "10:33 AM",
+    },
+    {
+      id: 4,
+      sender: "admin",
+      text: "The minimum bid is $200,000 and the auction closes on October 20th at 5:00 PM EST.",
+      time: "10:35 AM",
+    },
+    {
+      id: 5,
+      sender: "user",
+      text: "Thank you for the information about the property",
+      time: "10:36 AM",
+    },
+  ];
+
+  const handleSendMessage = (e) => {
+    e.preventDefault();
+    if (messageInput.trim()) {
+      // Handle send message logic here
+      setMessageInput("");
+    }
+  };
 
   return (
     <div className="dashboard-wrapper">
@@ -57,7 +140,7 @@ const BidManagementContent = () => {
               </svg>
               <span>Properties</span>
             </Link>
-            <Link href="/bid-management" className="nav-item active">
+            <Link href="/bid-management" className="nav-item">
               <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11.6667 10.8368L4.68254 17.8201C4.51839 17.9843 4.3235 18.1146 4.109 18.2035C3.89451 18.2924 3.6646 18.3381 3.43242 18.3382C2.9635 18.3382 2.51376 18.152 2.18212 17.8205C1.85049 17.489 1.66414 17.0393 1.66406 16.5704C1.66398 16.1015 1.85019 15.6517 2.18171 15.3201L9.16837 8.33594" stroke="currentColor" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
                 <path d="M13.334 13.3359L18.334 8.33594" stroke="currentColor" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
@@ -85,7 +168,7 @@ const BidManagementContent = () => {
               <i className="bi bi-bell"></i>
               <span>Notifications</span>
             </Link>
-            <Link href="/messaging" className="nav-item">
+            <Link href="/messaging" className="nav-item active">
               <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M17.5 12.5C17.5 13.163 17.2366 13.7989 16.7678 14.2678C16.2989 14.7366 15.663 15 15 15H5L2.5 17.5V5C2.5 4.33696 2.76339 3.70107 3.23223 3.23223C3.70107 2.76339 4.33696 2.5 5 2.5H15C15.663 2.5 16.2989 2.76339 16.7678 3.23223C17.2366 3.70107 17.5 4.33696 17.5 5V12.5Z" stroke="currentColor" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -131,40 +214,91 @@ const BidManagementContent = () => {
       {/* Main Content */}
       <div className="dashboard-content" style={{ background: '#FFFFFF' }}>
         <div className="container">
-          <div className="bid-management-wrapper">
-            <div className="bid-management-table-wrapper">
-              <table className="bid-management-table">
-                <thead>
-                  <tr>
-                    <th>Bid ID</th>
-                    <th>Property</th>
-                    <th>Bidder</th>
-                    <th>Amount</th>
-                    <th>Status</th>
-                    <th>Date</th>
-                    <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {bidsData.map((bid, index) => (
-                    <tr key={index}>
-                      <td className="bid-id">{bid.bidId}</td>
-                      <td>{bid.property}</td>
-                      <td>{bid.bidder}</td>
-                      <td className="bid-amount">{bid.amount}</td>
-                      <td>
-                        <span className={`bid-status-badge ${bid.status.toLowerCase()}`}>
-                          {bid.status}
-                        </span>
-                      </td>
-                      <td>{bid.date}</td>
-                      <td>
-                        <button className="bid-update-btn">Update</button>
-                      </td>
-                    </tr>
+          <div className="messaging-wrapper">
+            <div className="messaging-container">
+              {/* Conversations List */}
+              <div className="conversations-sidebar">
+                <div className="conversation-search">
+                  <i className="bi bi-search"></i>
+                  <input type="text" placeholder="Search conversations..." />
+                </div>
+
+                <div className="conversations-list">
+                  {conversations.map((conv, index) => (
+                    <div
+                      key={conv.id}
+                      className={`conversation-item ${selectedConversation === index ? 'active' : ''}`}
+                      onClick={() => setSelectedConversation(index)}
+                    >
+                      <div className="conv-avatar-wrapper">
+                        <img src={conv.avatar} alt={conv.name} className="conv-avatar" />
+                        {conv.isOnline && <span className="online-indicator"></span>}
+                      </div>
+                      <div className="conv-details">
+                        <div className="conv-header">
+                          <h4 className="conv-name">{conv.name}</h4>
+                          <span className="conv-time">{conv.time}</span>
+                        </div>
+                        <div className="conv-preview-row">
+                          <p className="conv-preview">{conv.preview}</p>
+                          {conv.unread > 0 && (
+                            <span className="unread-badge">{conv.unread}</span>
+                          )}
+                        </div>
+                      </div>
+                    </div>
                   ))}
-                </tbody>
-              </table>
+                </div>
+              </div>
+
+              {/* Chat Window */}
+              <div className="chat-window">
+                {/* Chat Header */}
+                <div className="chat-header">
+                  <div className="chat-user-info">
+                    <img src="/images/Image (John Doe).png" alt="John Smith" className="chat-avatar" />
+                    <div className="chat-user-details">
+                      <h3 className="chat-user-name">John Smith</h3>
+                      <span className="chat-user-status">Online</span>
+                    </div>
+                  </div>
+                  <button className="chat-menu-btn">
+                    <i className="bi bi-three-dots-vertical"></i>
+                  </button>
+                </div>
+
+                {/* Messages Area */}
+                <div className="messages-area">
+                  {messages.map((message) => (
+                    <div key={message.id} className={`message-bubble ${message.sender}`}>
+                      <div className="message-content">
+                        <p className="message-text">{message.text}</p>
+                        <span className="message-time">{message.time}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Message Input */}
+                <div className="message-input-wrapper">
+                  <form onSubmit={handleSendMessage} className="message-input-form">
+                    <button type="button" className="attach-btn">
+                      <i className="bi bi-paperclip"></i>
+                    </button>
+                    <input
+                      type="text"
+                      placeholder="Type your message..."
+                      value={messageInput}
+                      onChange={(e) => setMessageInput(e.target.value)}
+                      className="message-input"
+                    />
+                    <button type="submit" className="send-btn">
+                      <i className="bi bi-send-fill"></i>
+                      Send
+                    </button>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -173,4 +307,4 @@ const BidManagementContent = () => {
   );
 };
 
-export default BidManagementContent;
+export default MessagingContent;
