@@ -91,16 +91,16 @@ const BidderProfile = () => {
 
           {/* Profile Header Card */}
           <div className="bp-profile-card">
+            {/* Status Badge - Top Right */}
+            <span className="bp-status-badge active">{bidderData.status}</span>
+
             <div className="bp-profile-header">
               <div className="bp-avatar-section">
                 <div className="bp-avatar">
                   <img src={bidderData.avatar} alt={bidderData.name} />
                 </div>
                 <div className="bp-basic-info">
-                  <div className="bp-name-status">
-                    <h1 className="bp-name">{bidderData.name}</h1>
-                    <span className="bp-status-badge active">{bidderData.status}</span>
-                  </div>
+                  <h1 className="bp-name">{bidderData.name}</h1>
                   <p className="bp-bidder-id">Bidder ID: {bidderData.id}</p>
 
                   {/* Contact Info Icons */}
@@ -135,12 +135,16 @@ const BidderProfile = () => {
                   </div>
 
                   {/* Address */}
-                  <div className="bp-address">
+                  
+                </div>
+              </div>
+
+              {/* Horizontal Line */}
+              <div className="bp-divider"></div>
+              <div className="bp-address">
                     <i className="bi bi-geo-alt"></i>
                     {bidderData.address}
                   </div>
-                </div>
-              </div>
 
               {/* Action Buttons */}
               <div className="bp-action-buttons">
