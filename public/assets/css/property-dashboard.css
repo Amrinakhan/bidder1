@@ -50,10 +50,11 @@ body {
 }
 
 .dashboard-menu {
-  display: flex;
+  display: -webkit-box;
   gap: 0;
   padding: 0;
   margin: 0;
+  margin-left: -11%;
 }
 
 .dashboard-menu .nav-item {
