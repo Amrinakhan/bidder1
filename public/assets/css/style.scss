@@ -1983,6 +1983,7 @@ video {
     align-items: center;
     justify-content: space-between;
     .topbar-left{
+      margin-left: -10%;
       .contact-area{
         padding: 0;
         margin: 0;
@@ -2032,6 +2033,7 @@ video {
       }
     }
     .topbar-right{
+      margin-right: -10%;
       display: flex;
       align-items: center;
       gap: 40px;
@@ -2056,7 +2058,7 @@ video {
                   border-radius: 50px;
                   transition: 0.5s;
                   &:hover{
-                      background-color: var(--primary-color);
+                      background-color: #6ea500;
                       border-color: var(--primary-color);
                       color: var(--white-color);
                   }
@@ -3315,7 +3317,7 @@ header.style-1 {
         width: 0;
         height: 0;
         border-radius: 36px;
-        background-color: var(--primary-color);
+        background-color: #141515;
         transition: all 0.6s;   
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
@@ -24670,4 +24672,14 @@ cursor: pointer;
 .homepage-features__item:first-child {
   border-left: none;
   padding-left: 0;
+}
+
+/* Custom icon alignment fixes */
+.bi-bell {
+  margin-top: -2px;
+}
+
+.nav-item svg,
+.dashboard-menu svg {
+  margin-top: -2px;
 }

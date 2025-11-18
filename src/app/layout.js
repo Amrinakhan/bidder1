@@ -20,6 +20,7 @@ import "../../public/assets/css/reports.css";
 import "../../public/assets/css/subscription.css";
 import "../../public/assets/css/audit-log.css";
 import "../../public/assets/css/profile.css";
+import "../../public/assets/css/login.css";
 
 import ScrollTopBtn from "../components/common/ScrollTopBtn.jsx";
 import useWow from "@/customHooks/useWow";
