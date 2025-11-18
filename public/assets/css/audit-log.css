@@ -6,6 +6,12 @@
   min-height: calc(100vh - 200px);
 }
 
+.audit-log-section .container {
+  max-width: 970px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .audit-log-title {
   font-size: 24px;
   font-weight: 600;
@@ -27,7 +33,7 @@
 }
 
 .audit-log-table thead {
-  background-color: #2c3e50;
+  background-color: #1a1a1a;
 }
 
 .audit-log-table thead th {
@@ -50,8 +56,12 @@
 .audit-log-table tbody td {
   padding: 20px 24px;
   font-size: 14px;
-  color: #4b5563;
+  color: #1a1a1a;
   line-height: 1.5;
+}
+
+.audit-log-table tbody td:nth-child(2) {
+  font-weight: bold;
 }
 
 .audit-log-table tbody tr:hover {
