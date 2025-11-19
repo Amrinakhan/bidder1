@@ -1,5 +1,6 @@
 import Header from "@/components/header/Header";
 import ProfileContent from "@/components/profile/ProfileContent";
+import DashboardFooter from "@/components/footer/DashboardFooter";
 import React from "react";
 
 export const metadata = {
@@ -13,6 +14,7 @@ const ProfilePage = () => {
     <>
       <Header />
       <ProfileContent />
+      <DashboardFooter />
     </>
   );
 };

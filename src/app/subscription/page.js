@@ -1,5 +1,6 @@
 import Header from "@/components/header/Header";
 import SubscriptionContent from "@/components/subscription/SubscriptionContent";
+import DashboardFooter from "@/components/footer/DashboardFooter";
 import React from "react";
 
 export const metadata = {
@@ -13,6 +14,7 @@ const SubscriptionPage = () => {
     <>
       <Header />
       <SubscriptionContent />
+      <DashboardFooter />
     </>
   );
 };
